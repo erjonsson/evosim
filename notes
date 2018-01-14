@@ -1,0 +1,24 @@
+Create organisms that populates the world and see what happens.
+
+Organisms can move, eat, reproduce and fight.
+
+Movement:
+    Speed depends on metabolism. A fast metabolism enables fast movement but drains energy faster.
+    Think about having terrain, maybe alpha in bitmap?
+Metabolism:
+    Herbavore:
+        Gather energy from "plants". plants grow on the ground
+    Carnivore:
+        Eat other organisms. can kill them or eat
+Reproduction:
+    DNA:
+        DNA decides all features of an organism. Organisms can reproduce if the their DNA does not differ too much.
+Social:
+    Organisms can stay together in groups or shy away from other organisms. perhaps symbiosis between
+Fighting:
+    A carnivore can kill another organism and eat it.
+Sensors:
+    Organism uses sensors to find out information about the world. 
+World:
+    Make it a bitmap with different colours representing different plants.
+
