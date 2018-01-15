@@ -10,6 +10,8 @@ Metabolism:
         Gather energy from "plants". plants grow on the ground
     Carnivore:
         Eat other organisms. can kill them or eat
+    Size:
+        A bigger organism might be more difficult to kill, but would be easier to find.
 Reproduction:
     DNA:
         DNA decides all features of an organism. Organisms can reproduce if the their DNA does not differ too much.
@@ -18,7 +20,8 @@ Social:
 Fighting:
     A carnivore can kill another organism and eat it.
 Sensors:
-    Organism uses sensors to find out information about the world. 
+    Organism uses sensors to find out information about the world.
+    Some Organisms could develop camoflage wich would make hem more difficult to find.
 World:
     Make it a bitmap with different colours representing different plants.
 
