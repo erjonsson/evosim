@@ -9,7 +9,7 @@ World::World()
 int
 World::LoadMapFile(std::string& file_path)
 {
-    bitmap_world_ = std::unique_ptr<bitmap_image>(new bitmap_image(file_path));
+    bitmap_world_ = std::make_unique<bitmap_image>(file_path);
 
     if (!bitmap_world_)
     {  
@@ -25,5 +25,5 @@ World::LoadMapFile(std::string& file_path)
 void
 World::AddOrganismAtRandomLocation(){
     // sort out the randomness later, for now add at fixed position
-    organism_pool_.push_back(std::unique_ptr<Organism>(new Organism(std::make_pair(1,1))));
+    organism_pool_.push_back(std::make_unique<Organism>(std::make_pair(1,1), *this));
 }

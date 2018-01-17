@@ -2,15 +2,21 @@
 #define EVOSIM_ORGANISM_H
 #include <string>
 #include <utility>
-
+//#include "world.h" //why doesnt this work?
+class World;
 class Organism{
 public:
-    Organism();
-    Organism(std::pair<int, int> position);
+    Organism(std::pair<int, int> position, World& world);
+
+    void Action();
+    void SetPosition(std::pair<int, int> position);
+    
+private:
     int age_;
     std::string dna_;
     std::pair<int, int> position_; // x, y
-    void SetPosition(std::pair<int, int> position);
+    World& world_;
+
     // movement
     // sensors
     // reproduction

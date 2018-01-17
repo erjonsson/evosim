@@ -6,8 +6,12 @@
 class Simulator
 {
 public:
-    Simulator();
-  //  Simulator(World&);
+    Simulator(World& world);
+    void Simulate();
+private:
+    void Action();
+    void Render();
+    World& world_;
 };
 
 #endif /* EVOSIM_SIMULATOR_H */
