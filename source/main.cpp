@@ -3,10 +3,14 @@
 #include <string>
 #include "world.h"
 #include "simulator.h"
+#include <SFML/Window.hpp>
 
 int main()
 {
     std::cout << "evosim" << std::endl;
+
+    std::cout << "create window" << std::endl;
+    sf::Window window(sf::VideoMode(800, 600), "evosim");
 
     std::cout << "create world" << std::endl;
     
