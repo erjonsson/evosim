@@ -1,6 +1,6 @@
 cmake_minimum_required (VERSION 2.6)
 project (evosim)
-add_executable( ${PROJECT_NAME} main.cpp organism.cpp world.cpp simulator.cpp)
+add_executable( ${PROJECT_NAME} main.cpp organism.cpp world.cpp evosim.cpp)
 target_compile_options( ${PROJECT_NAME} PUBLIC $<$<COMPILE_LANGUAGE:CXX>:-std=c++14>)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
