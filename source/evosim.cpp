@@ -12,7 +12,7 @@ Evosim::Evosim():running_(false)
 int
 Evosim::ProcessArguments(){
     return 0;
-}; // will process command line arguments    
+};
 
 int
 Evosim::Simulate(){
@@ -20,6 +20,7 @@ Evosim::Simulate(){
     running_ = true;
 
     InitRenderer();
+    InitWorld();
     GameLoop();
 
     running_ = false;
@@ -39,9 +40,9 @@ Evosim::Action(){
         }
     }
 
-    // for (auto& organism : world_->organism_pool_){
-    //     organism->Action();
-    // }
+    for (auto& organism : world_->GetOrganismPool()){
+        organism->Action();
+    }
 }
 
 void
@@ -49,17 +50,10 @@ Evosim::Render(){
     // clear the window with black color
     window_->clear(sf::Color::Black);
 
-    // draw everything here...
-    // window.draw(...);
-        sf::CircleShape shape(5);
-    shape.setFillColor(sf::Color(150, 50, 250));
+    for (auto& organism : world_->GetOrganismPool()){
+        window_->draw(organism->GetDrawObject());
+    }
 
-    // set a 10-pixel wide orange outline
-    shape.setOutlineThickness(1);
-    shape.setOutlineColor(sf::Color(250, 150, 100));
-   window_->draw(shape);
-
-    // end the current frame
     window_->display();
 }
 
@@ -67,13 +61,16 @@ void
 Evosim::InitRenderer(){
     std::cout << "create window" << std::endl;
     window_ = std::make_unique<sf::RenderWindow>(sf::VideoMode(800, 600), "evosim");
+}
 
-    // sf::CircleShape shape(5);
-    // shape.setFillColor(sf::Color(150, 50, 250));
+void
+Evosim::InitWorld(){
+    std::cout << "create world" << std::endl;
+    world_ = std::make_unique<World>();
+   // world_->LoadMapFile() //do this stuff later
 
-    // // set a 10-pixel wide orange outline
-    // shape.setOutlineThickness(1);
-    // shape.setOutlineColor(sf::Color(250, 150, 100));
+   world_->AddOrganismAtRandomLocation();
+
 }
 
 void

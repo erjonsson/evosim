@@ -16,6 +16,7 @@ private:
     void Action();
     void Render();
     void InitRenderer();
+    void InitWorld();
     void GameLoop();
     std::unique_ptr<World> world_;
     std::unique_ptr<sf::RenderWindow> window_;
